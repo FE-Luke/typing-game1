@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>打字游戏</title>
+    <script src="./js/game.js"></script>
+    <link rel="stylesheet" href="./css/game.css">
+    <script>
+        window.onload = function () {
+            document.getElementsByClassName('start')[0].onclick = function(){
+                var game = new Game();
+                game.play();
+            };
+
+        }
+    </script>
+</head>
+<body>
+    <audio src="./media/win.ogg" id="win"></audio>
+    <audio src="./media/lose.wav" id="lose"></audio>
+    <audio src="./media/bg.mp3" id="audio" loop="loop"></audio>
+    <div class="mask"></div>
+    <div class="splash" id="splash">
+        <div class="gametitle">打字游戏</div>
+        <div class="start">开始游戏</div>
+        <div class="mask1"></div>
+    </div>
+    <div class="hudborder">
+        <div class="hud">
+            <div class="stage">
+                关卡：<span id="stage"></span>
+            </div>
+            <div class="life">
+                生命：<span id="life"></span>
+            </div>
+            <div class="score">
+                分数：<span id="score"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
